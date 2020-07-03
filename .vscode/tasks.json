@@ -1,0 +1,42 @@
+{ 
+    "version": "2.0.0",
+    "tasks": [
+       {
+          "label": "egret build",
+          "type": "shell",
+          "command": "egret.cmd",
+          "windows": {
+             "command": "egret.cmd"
+          },
+          "args": [
+             "build"
+          ],
+          "group": "build"
+       },
+       {
+          "label": "egret start server",
+          "type": "shell",
+          "command": "egret.cmd",
+          "windows": {
+             "command": "egret.cmd"
+          },
+          "args": [
+             "startserver",
+             "${workspaceFolder}"
+          ], 
+          "group": "test"
+       },
+       {
+          "label": "egret publish",
+          "type": "shell",
+          "command": "egret.cmd",
+          "windows": {
+             "command": "egret.cmd"
+          },
+          "args": [
+             "publish"
+          ],
+          "group": "test"
+       }
+    ]
+ }
