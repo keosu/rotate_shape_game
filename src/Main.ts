@@ -298,6 +298,37 @@ class GameBoard extends eui.Component {
     }
 }
 
+class InfoPanel extends eui.Component{
+    constructor() {
+        super();  
+    }
+    clear() { 
+        this.removeChildren(); 
+    }
+    draw(text:string) {
+        this.width = 500;
+        this.height = 500;
+
+        let bg = new egret.Shape();
+        bg.graphics.beginFill(0x151515,0.8);
+        bg.graphics.drawRoundRect(0,0,500,500,50,50);
+        bg.graphics.endFill();
+        this.addChild(bg);
+        
+        let info = new egret.TextField()
+        info.text = text;
+        info.textColor = 0xff0000;
+        info.multiline = true;
+        info.textAlign = "center";
+        info.verticalAlign = "center";
+        info.width = 500;
+        info.height = 500;
+        info.size = 52;
+        this.addChild(info); 
+        info.y = 200;
+    }
+}
+
 class Main extends eui.UILayer {
     game: Game;
     gameBoard: GameBoard;
@@ -370,6 +401,7 @@ class Main extends eui.UILayer {
     info: egret.TextField;
     levelSwith: eui.ToggleSwitch;
     timer: egret.Timer;
+    infoPanel: InfoPanel = new InfoPanel();
 
     protected createGameScene(): void {
         let sky = new egret.Bitmap();
@@ -405,6 +437,7 @@ class Main extends eui.UILayer {
         abc.x = 380;
         abc.y = 120;
         this.addChild(abc);
+
 
         this.timecnt = new egret.TextField();
         this.timecnt.text = "0";
@@ -454,7 +487,11 @@ class Main extends eui.UILayer {
         tbd.scaleY = 0.346;
         this.addChild(tbd);
 
-        this.stage.scaleMode = egret.StageScaleMode.EXACT_FIT;
+        
+        this.infoPanel.x = 70;
+        this.infoPanel.y = 220;
+        this.addChild(this.infoPanel);
+ 
     }
 
     /**
@@ -469,6 +506,7 @@ class Main extends eui.UILayer {
 
         this.timecnt.text = '0';
         this.info.text = ""; 
+        this.infoPanel.clear();
 
         if (this.timer)
             this.timer.stop();
@@ -476,6 +514,7 @@ class Main extends eui.UILayer {
         this.timer.addEventListener(egret.TimerEvent.TIMER, () => {
             if (!game.isStarted) { 
                 this.info.text = "成功解答!"; 
+                // this.infoPanel.draw("成功解答!");
                 this.timer.stop();
                 return; 
             }
