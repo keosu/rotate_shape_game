@@ -1,0 +1,35 @@
+{
+	"groups": [
+		{
+			"keys": "btn1_png,btn2_png,bg_mp3,fire_mp3,description_json",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "btn1_png",
+			"type": "image",
+			"url": "assets/btn1.png"
+		},
+		{
+			"name": "btn2_png",
+			"type": "image",
+			"url": "assets/btn2.png"
+		} ,
+		{
+			"url": "music/touch.mp3",
+			"type": "sound",
+			"name": "fire_mp3"
+		},
+		{
+			"url": "music/background.mp3",
+			"type": "sound",
+			"name": "bg_mp3"
+		},
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		}  
+	]
+}
