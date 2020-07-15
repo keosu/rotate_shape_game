@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Play Games!!</title> 
+    <title>Play Games!!</title>
     <style>
         html,
         body {
@@ -14,35 +14,27 @@
             height: 100%;
         }
 
-        div {
- 
+        div.block {
+
             width: 100%;
             height: 100%;
             justify-content: center;
 
-            position: absolute; 
+            position: absolute;
 
             display: flex;
             border-radius: 10px;
             border: #888888 1px;
-            padding-top: 10%;
-        }
+            padding-top: 3%;
 
-        div ul {
-            width: 100%;
-            padding: 0;
-        }
 
-        div ul li {
-            height: 80px;
-            width: 100%;
-            list-style-type: none;
-            text-decoration: none;
-        }
+            display: grid;
+            grid-template-columns: 100%; 
+        } 
 
         a {
-            font-size:  64px;
-            color:blue; 
+            font-size: 50px;
+            color: rgb(126, 31, 129);
             text-decoration: none;
         }
 
@@ -51,25 +43,32 @@
             text-decoration: none;
         }
 
-        li:hover {
+        div.link:hover {
             color: green;
             opacity: 0.8;
             background: green;
+        }
+
+        div.link { 
+            padding-left: 10%;
+            padding-top: 1%;
+            color: lightslategrey;
+            border: 1px solid gray
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <ul>
-            <li><a href="./ball">弹球</a></li>
-            <li><a href="./brick/">消除</a></li>
-            <li><a href="./color/">鉴别颜色</a></li>
-            <li><a href="./rorate/">旋转色块</a></li>
-            <li><a href="./2048/">2048</a></li>
-            <li><a href="./npuzzel/">数字华容道</a></li>
-            <li><a href="./flip/">颜色翻转</a></li>
-        </ul>
+    <div class="block">
+        <!-- <ul> -->
+        <div class="link"><a href="./ball">弹球</a></div>
+        <div class="link"><a href="./brick/">消除</a></div>
+        <div class="link"><a href="./color/">鉴别颜色</a></div>
+        <div class="link"><a href="./rorate/">旋转色块</a></div>
+        <div class="link"><a href="./2048/">2048</a></div>
+        <div class="link"><a href="./npuzzel/">数字华容道</a></div>
+        <div class="link"><a href="./flip/">颜色翻转</a></div>
+        <!-- </ul> -->
     </div>
 
 </body>
